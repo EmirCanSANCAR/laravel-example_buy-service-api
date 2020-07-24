@@ -25,6 +25,8 @@ Route::prefix('v1')->group(function () {
         Route::middleware('auth:api:users')->group(function () {
             Route::get('account', 'UserControllers\UserController@getAccount');
             Route::get('service-providers', 'UserControllers\ServiceProviderController@getServiceProviders');
+            Route::post('orders', 'UserControllers\OrderController@postOrder');
+            Route::get('orders', 'UserControllers\OrderController@getOrders');
         });
     });
 

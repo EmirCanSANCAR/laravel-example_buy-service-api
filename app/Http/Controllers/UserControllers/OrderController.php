@@ -9,6 +9,21 @@ use App\Models\Service;
 
 class OrderController extends Controller
 {
+    public function getOrder(Request $request)
+    {
+        $per_page = $request->input('per_page', 20);
+
+        $query = auth()->user()->orders()->query();
+
+        // TODO
+        // if(Date > x) {
+
+        // }
+
+        $payload = $query->paginate((int) $per_page);
+        return response()->json($payload);
+    }
+
     public function postOrder(Request $request, $serviceId)
     {
         $service = Service::findOrFail($serviceId);

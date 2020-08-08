@@ -6,7 +6,7 @@
 
     Create a database called "buy-service" from a database of MySQL, PostgreSQL, etc.
 
-    php artisan migrate:seed --seed
+    php artisan migrate:fresh --seed
 
     php artisan passport:install --force
 
